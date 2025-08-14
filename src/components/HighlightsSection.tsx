@@ -13,39 +13,39 @@ const HighlightsSection = () => {
   const highlights = [
     {
       image: highlight1,
-      title: 'Tech Conference 2024',
-      category: 'SPEAKING',
-      description: 'Keynote presentation on the future of digital content creation'
+      title: 'Konferensi Teknologi 2024',
+      category: 'BERBICARA',
+      description: 'Presentasi keynote tentang masa depan kreasi konten digital'
     },
     {
       image: highlight2,
-      title: 'Brand Partnership',
-      category: 'COLLABORATION',
-      description: 'Strategic collaboration with leading luxury brands'
+      title: 'Kemitraan Brand',
+      category: 'KOLABORASI',
+      description: 'Kolaborasi strategis dengan brand-brand luxury terkemuka'
     },
     {
       image: highlight3,
-      title: 'Content Studio',
-      category: 'PRODUCTION',
-      description: 'Behind the scenes of award-winning content creation'
+      title: 'Studio Konten',
+      category: 'PRODUKSI',
+      description: 'Di balik layar kreasi konten pemenang penghargaan'
     },
     {
       image: highlight4,
-      title: 'Industry Awards',
-      category: 'RECOGNITION',
-      description: 'Creator of the Year award for innovation in digital media'
+      title: 'Penghargaan Industri',
+      category: 'PENGAKUAN',
+      description: 'Penghargaan Creator of the Year untuk inovasi di media digital'
     },
     {
       image: highlight5,
-      title: 'Team Leadership',
-      category: 'INNOVATION',
-      description: 'Leading creative teams to breakthrough achievements'
+      title: 'Kepemimpinan Tim',
+      category: 'INOVASI',
+      description: 'Memimpin tim kreatif menuju pencapaian terobosan'
     },
     {
       image: highlight6,
-      title: 'Product Launch',
+      title: 'Peluncuran Produk',
       category: 'ENTREPRENEURSHIP',
-      description: 'Unveiling next-generation digital experiences'
+      description: 'Mengungkap pengalaman digital generasi terbaru'
     }
   ];
 
@@ -76,11 +76,11 @@ const HighlightsSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 slide-in-bottom">
           <h2 className="text-section-title text-foreground mb-6">
-            CAREER
-            <span className="block text-gold">HIGHLIGHTS</span>
+            SOROTAN
+            <span className="block text-gold">KARIR</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Dustin Tiffani's highlights and achievements in digital content creation and entrepreneurship.
+            Sorotan dan pencapaian Dustin Tiffany dalam kreasi konten digital dan entrepreneurship.
           </p>
         </div>
 
@@ -100,7 +100,7 @@ const HighlightsSection = () => {
                 <div className="absolute inset-0 bg-hero-overlay opacity-0 group-hover:opacity-60 transition-opacity duration-500"></div>
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <span className="text-hero-text font-semibold tracking-wide text-lg">
-                    VIEW DETAILS
+                    LIHAT DETAIL
                   </span>
                 </div>
                 <div className="absolute top-4 left-4">
@@ -127,7 +127,7 @@ const HighlightsSection = () => {
             size="lg"
             className="bg-gold text-gold-foreground hover:bg-gold/90 font-semibold tracking-wide px-8 py-6 text-lg"
           >
-            VIEW HIGHLIGHTS →
+            LIHAT SOROTAN →
           </Button>
         </div>
       </div>

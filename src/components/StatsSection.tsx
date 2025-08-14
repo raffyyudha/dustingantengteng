@@ -7,27 +7,27 @@ const StatsSection = () => {
   const stats = [
     {
       number: 2.5,
-      suffix: 'M+',
-      label: 'FOLLOWERS',
-      description: 'Across all platforms'
+      suffix: 'Jt+',
+      label: 'PENGIKUT',
+      description: 'Di seluruh platform'
     },
     {
       number: 150,
       suffix: '+',
-      label: 'PROJECTS',
-      description: 'Successfully completed'
+      label: 'PROYEK',
+      description: 'Berhasil diselesaikan'
     },
     {
       number: 8,
       suffix: '+',
-      label: 'YEARS',
-      description: 'Industry experience'
+      label: 'TAHUN',
+      description: 'Pengalaman industri'
     },
     {
       number: 50,
       suffix: '+',
-      label: 'AWARDS',
-      description: 'Recognition received'
+      label: 'PENGHARGAAN',
+      description: 'Pengakuan diterima'
     }
   ];
 
@@ -91,11 +91,11 @@ const StatsSection = () => {
       <div className="container mx-auto px-6 relative">
         <div className="text-center mb-16">
           <h2 className="text-section-title text-foreground">
-            CAREER
-            <span className="block text-gold">ACHIEVEMENTS</span>
+            PENCAPAIAN
+            <span className="block text-gold">KARIR</span>
           </h2>
           <p className="text-xl text-muted-foreground mt-6 max-w-2xl mx-auto">
-            Cristiano Ronaldo's highlights and achievements.
+            Sorotan dan pencapaian Dustin Tiffany.
           </p>
         </div>
 

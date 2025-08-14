@@ -44,11 +44,11 @@ const SocialSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 slide-in-bottom">
           <h2 className="text-section-title text-foreground mb-6">
-            SOCIAL
-            <span className="block text-gold">MEDIA WALL</span>
+            MEDIA
+            <span className="block text-gold">SOSIAL</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Follow Dustin's journey through his social media channels and stay connected with his latest content.
+            Ikuti perjalanan Dustin melalui kanal media sosialnya dan tetap terhubung dengan konten terbarunya.
           </p>
           
           <Button 
@@ -56,7 +56,7 @@ const SocialSection = () => {
             className="bg-gold text-gold-foreground hover:bg-gold/90 font-semibold tracking-wide px-8 py-6 text-lg"
           >
             <Instagram className="mr-2" size={20} />
-            @dustintiffani
+            @dustintiffany
             <ExternalLink className="ml-2" size={16} />
           </Button>
         </div>
@@ -79,7 +79,7 @@ const SocialSection = () => {
                     <span>❤️ {post.likes}</span>
                     <span>💬 {post.comments}</span>
                   </div>
-                  <p className="mt-2 text-sm opacity-75">View Post</p>
+                  <p className="mt-2 text-sm opacity-75">Lihat Postingan</p>
                 </div>
               </div>
             </div>
@@ -88,7 +88,7 @@ const SocialSection = () => {
 
         <div className="text-center slide-in-bottom">
           <p className="text-lg text-muted-foreground mb-6">
-            Join <span className="text-gold font-semibold">2.5M+</span> followers across all platforms
+            Bergabung dengan <span className="text-gold font-semibold">2.5Jt+</span> pengikut di semua platform
           </p>
           <div className="flex justify-center space-x-4">
             <Button 
@@ -96,14 +96,14 @@ const SocialSection = () => {
               size="lg"
               className="border-gold text-gold hover:bg-gold hover:text-gold-foreground"
             >
-              Follow on Instagram
+              Ikuti di Instagram
             </Button>
             <Button 
               variant="outline"
               size="lg"
               className="border-gold text-gold hover:bg-gold hover:text-gold-foreground"
             >
-              Subscribe on YouTube
+              Subscribe di YouTube
             </Button>
           </div>
         </div>

@@ -16,10 +16,10 @@ const Header = () => {
 
   const navItems = [
     { label: 'DT', href: '#home', isLogo: true },
-    { label: 'CAREER HIGHLIGHTS', href: '#highlights' },
-    { label: 'BRANDS', href: '#brands' },
-    { label: 'LIFE MUSEUM', href: '#museum' },
-    { label: 'PARTNERS', href: '#partners' }
+    { label: 'SOROTAN KARIR', href: '#highlights' },
+    { label: 'BRAND', href: '#brands' },
+    { label: 'MUSEUM KEHIDUPAN', href: '#museum' },
+    { label: 'PARTNER', href: '#partners' }
   ];
 
   return (
@@ -37,7 +37,7 @@ const Header = () => {
             href="#home" 
             className="text-2xl font-black text-nav-text tracking-tight"
           >
-            DUSTIN TIFFANI
+            DUSTIN TIFFANY
           </a>
 
           {/* Desktop Navigation */}

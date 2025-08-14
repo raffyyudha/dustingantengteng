@@ -10,21 +10,21 @@ const HeroSlider = () => {
   const slides = [
     {
       image: heroImage1,
-      title: "DIGITAL",
-      subtitle: "CREATOR",
-      description: "Crafting the future of content"
+      title: "KREATOR",
+      subtitle: "DIGITAL",
+      description: "Menciptakan masa depan konten digital"
     },
     {
       image: heroImage2,
-      title: "INNOVATIVE",
-      subtitle: "ENTREPRENEUR",
-      description: "Building tomorrow's experiences today"
+      title: "ENTREPRENEUR",
+      subtitle: "INOVATIF",
+      description: "Membangun pengalaman masa depan hari ini"
     },
     {
       image: heroImage3,
-      title: "VISIONARY",
-      subtitle: "LEADER",
-      description: "Inspiring global audiences"
+      title: "PEMIMPIN",
+      subtitle: "VISIONER",
+      description: "Menginspirasi audiens global"
     }
   ];
 
@@ -115,7 +115,7 @@ const HeroSlider = () => {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 right-8 text-hero-text/70">
         <div className="flex flex-col items-center space-y-2">
-          <span className="text-sm tracking-wider">SCROLL</span>
+          <span className="text-sm tracking-wider">GULIR</span>
           <div className="w-px h-12 bg-hero-text/30"></div>
         </div>
       </div>

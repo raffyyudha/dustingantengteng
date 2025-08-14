@@ -44,39 +44,39 @@ const AboutSection = () => {
 
           {/* Content Side */}
           <div className="space-y-8">
-            <div className="fade-in-stagger" style={{ transitionDelay: '0.2s' }}>
+            <div className="fade-in-stagger" style={{ transitionDelay: "0.2s" }}>
               <h2 className="text-section-title text-foreground mb-6">
-                ABOUT
-                <span className="block text-gold">DUSTIN TIFFANI</span>
+                TENTANG
+                <span className="block text-gold">DUSTIN TIFFANY</span>
               </h2>
             </div>
 
-            <div className="space-y-6 fade-in-stagger" style={{ transitionDelay: '0.4s' }}>
+            <div className="space-y-6 fade-in-stagger" style={{ transitionDelay: "0.4s" }}>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Dustin Tiffani is a multifaceted digital creator, entrepreneur, and public figure 
-                recognized for his bold creative vision and innovative approach to content. Over 
-                the years, Dustin has built a loyal audience by merging storytelling, technology, 
-                and cultural insight into engaging, high-quality productions.
+                Dustin Tiffany adalah seorang kreator digital multitalenta, entrepreneur, dan figur publik 
+                yang dikenal karena visi kreatifnya yang berani dan pendekatan inovatif terhadap konten. 
+                Selama bertahun-tahun, Dustin telah membangun audiens yang loyal dengan menggabungkan 
+                storytelling, teknologi, dan wawasan budaya ke dalam produksi berkualitas tinggi yang menarik.
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                His journey spans collaborations with major brands, speaking engagements, and an 
-                ever-growing digital presence. With a passion for pushing boundaries and inspiring 
-                others, Dustin continues to shape the future of digital content creation.
+                Perjalanannya mencakup kolaborasi dengan brand-brand besar, engagement publik, dan 
+                kehadiran digital yang terus berkembang. Dengan passion untuk melampaui batas dan 
+                menginspirasi orang lain, Dustin terus membentuk masa depan kreasi konten digital.
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                From innovative campaigns to thought leadership, Dustin's work reflects a commitment 
-                to excellence and a vision for what's possible when creativity meets technology.
+                Dari kampanye inovatif hingga kepemimpinan pemikiran, karya Dustin mencerminkan komitmen 
+                terhadap keunggulan dan visi tentang apa yang mungkin terjadi ketika kreativitas bertemu teknologi.
               </p>
             </div>
 
-            <div className="fade-in-stagger" style={{ transitionDelay: '0.6s' }}>
+            <div className="fade-in-stagger" style={{ transitionDelay: "0.6s" }}>
               <Button 
                 size="lg" 
                 className="bg-gold text-gold-foreground hover:bg-gold/90 font-semibold tracking-wide px-8 py-6 text-lg"
               >
-                READ MORE
+                BACA SELENGKAPNYA
               </Button>
             </div>
           </div>
