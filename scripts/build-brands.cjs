@@ -18,16 +18,21 @@ const buildBrandsSection = async ($) => {
     const brandName = brand.name.toUpperCase();
     const brandUrl = brand.link || '#';
 
-    // With root = 'src', Vite serves assets from 'src/public' at the server root '/'.
-    // We only need to check for files inside 'src/public/brands/'.
-    const svgPath = path.join(__dirname, '..', 'src', 'public', 'brands', `${brandSlug}.svg`);
-    const pngPath = path.join(__dirname, '..', 'src', 'public', 'brands', `${brandSlug}.png`);
+    // Check for files in both assets and public folders for maximum compatibility
+    const assetsSvgPath = path.join(__dirname, '..', 'src', 'assets', 'brands', `${brandSlug}.svg`);
+    const assetsPngPath = path.join(__dirname, '..', 'src', 'assets', 'brands', `${brandSlug}.png`);
+    const publicSvgPath = path.join(__dirname, '..', 'src', 'public', 'brands', `${brandSlug}.svg`);
+    const publicPngPath = path.join(__dirname, '..', 'src', 'public', 'brands', `${brandSlug}.png`);
 
     let logoSrc = '';
-    // Prefer SVG over PNG.
-    if (fs.existsSync(svgPath)) {
+    // Prefer SVG over PNG, and assets over public for Vite bundling
+    if (fs.existsSync(assetsSvgPath)) {
+      logoSrc = `/src/assets/brands/${brandSlug}.svg`;
+    } else if (fs.existsSync(assetsPngPath)) {
+      logoSrc = `/src/assets/brands/${brandSlug}.png`;
+    } else if (fs.existsSync(publicSvgPath)) {
       logoSrc = `/brands/${brandSlug}.svg`;
-    } else if (fs.existsSync(pngPath)) {
+    } else if (fs.existsSync(publicPngPath)) {
       logoSrc = `/brands/${brandSlug}.png`;
     }
 
