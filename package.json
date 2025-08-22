@@ -5,9 +5,9 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "predev": "node scripts/predev.js",
+    "predev": "node scripts/predev.cjs",
     "dev": "vite src --port 3000",
-    "prebuild": "node scripts/predev.js",
+    "prebuild": "node scripts/predev.cjs",
     "build": "vite build src",
     "preview": "vite preview"
   },
