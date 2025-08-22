@@ -8,8 +8,9 @@ const { buildBrandsSection } = require("./build-brands.cjs");
 const brands = require("../src/public/brands.json");
 
 // --- Start of fetch-logos logic ---
-// Vite dijalankan dengan root = 'src', jadi publicDir ada di 'src/public'.
+// Copy logos to both src/public/brands (for dev) and public/brands (for build)
 const OUT_DIR = path.join(__dirname, '../src/public/brands');
+const ROOT_OUT_DIR = path.join(__dirname, '../public/brands');
 
 function toCandidates(brand) {
   const name = brand.name || '';
@@ -53,9 +54,18 @@ async function ensureDir(dir) {
   }
 }
 
+async function copyFile(src, dest) {
+  try {
+    await fsp.copyFile(src, dest);
+  } catch (err) {
+    // Ignore if source doesn't exist
+  }
+}
+
 async function fetchLogos() {
   console.log('Checking for missing brand logos...');
   await ensureDir(OUT_DIR);
+  await ensureDir(ROOT_OUT_DIR);
   let success = 0;
   let skipped = 0;
   let failed = 0;
@@ -63,11 +73,19 @@ async function fetchLogos() {
   for (const brand of brands) {
     const outSvg = path.join(OUT_DIR, `${brand.slug}.svg`);
     const outPng = path.join(OUT_DIR, `${brand.slug}.png`);
-    const rootSvg = path.join(__dirname, '../public/brands', `${brand.slug}.svg`);
-    const rootPng = path.join(__dirname, '../public/brands', `${brand.slug}.png`);
+    const rootSvg = path.join(ROOT_OUT_DIR, `${brand.slug}.svg`);
+    const rootPng = path.join(ROOT_OUT_DIR, `${brand.slug}.png`);
 
-    // If either SVG or PNG already exists (either in src/public or public), skip downloading
-    if (fs.existsSync(outSvg) || fs.existsSync(outPng) || fs.existsSync(rootSvg) || fs.existsSync(rootPng)) {
+    // Copy existing files from src/public to public if they exist
+    if (fs.existsSync(outSvg) && !fs.existsSync(rootSvg)) {
+      await copyFile(outSvg, rootSvg);
+    }
+    if (fs.existsSync(outPng) && !fs.existsSync(rootPng)) {
+      await copyFile(outPng, rootPng);
+    }
+
+    // If either SVG or PNG already exists in both locations, skip downloading
+    if ((fs.existsSync(outSvg) || fs.existsSync(outPng)) && (fs.existsSync(rootSvg) || fs.existsSync(rootPng))) {
       skipped++;
       continue;
     }
@@ -80,6 +98,7 @@ async function fetchLogos() {
         const svg = await fetchSvg(url);
         if (svg && svg.includes('<svg')) {
           await fsp.writeFile(outSvg, svg, 'utf8');
+          await fsp.writeFile(rootSvg, svg, 'utf8');
           console.log(`  ✓ Downloaded: ${brand.name}`);
           success++;
           downloaded = true;
@@ -97,6 +116,31 @@ async function fetchLogos() {
       } else {
         skipped++;
       }
+    }
+  }
+  
+  // Final sync: ensure all files exist in both locations
+  console.log('Syncing brand logos between directories...');
+  for (const brand of brands) {
+    const outSvg = path.join(OUT_DIR, `${brand.slug}.svg`);
+    const outPng = path.join(OUT_DIR, `${brand.slug}.png`);
+    const rootSvg = path.join(ROOT_OUT_DIR, `${brand.slug}.svg`);
+    const rootPng = path.join(ROOT_OUT_DIR, `${brand.slug}.png`);
+    
+    // Copy from src/public to public
+    if (fs.existsSync(outSvg) && !fs.existsSync(rootSvg)) {
+      await copyFile(outSvg, rootSvg);
+    }
+    if (fs.existsSync(outPng) && !fs.existsSync(rootPng)) {
+      await copyFile(outPng, rootPng);
+    }
+    
+    // Copy from public to src/public (in case files were manually added to public)
+    if (fs.existsSync(rootSvg) && !fs.existsSync(outSvg)) {
+      await copyFile(rootSvg, outSvg);
+    }
+    if (fs.existsSync(rootPng) && !fs.existsSync(outPng)) {
+      await copyFile(rootPng, outPng);
     }
   }
   if (success > 0 || failed > 0) {
