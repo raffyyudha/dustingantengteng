@@ -1,0 +1,20 @@
+[
+  { "name": "NETFLIX", "slug": "netflix", "link": "https://www.netflix.com/" },
+  { "name": "PRIME VIDEO", "slug": "prime-video", "link": "https://www.primevideo.com/" },
+  { "name": "MOXA ASTRA FINANCIAL", "slug": "moxa-astra", "link": "https://moxa.co.id/" },
+  { "name": "KOMIX", "slug": "komix", "link": "#" },
+  { "name": "GOJEK", "slug": "gojek", "link": "https://www.gojek.com/" },
+  { "name": "GOPAY", "slug": "gopay", "link": "https://www.gopay.co.id/" },
+  { "name": "REXONA", "slug": "rexona", "link": "https://www.rexona.com/" },
+  { "name": "WRANGLER", "slug": "wrangler", "link": "https://www.wrangler.com/" },
+  { "name": "KOPI LAIN HATI", "slug": "kopi-lain-hati", "link": "#" },
+  { "name": "ZEROLOGIC LIQUID", "slug": "zerologic", "link": "#" },
+  { "name": "BLIBLI", "slug": "blibli", "link": "https://www.blibli.com/" },
+  { "name": "TOKOPEDIA", "slug": "tokopedia", "link": "https://www.tokopedia.com/" },
+  { "name": "TELKOMSEL", "slug": "telkomsel", "link": "https://www.telkomsel.com/" },
+  { "name": "BY.U", "slug": "byu", "link": "https://www.byu.id/" },
+  { "name": "HONDA", "slug": "honda", "link": "https://www.honda-indonesia.com/" },
+  { "name": "HYUNDAI", "slug": "hyundai", "link": "https://www.hyundai.com/" },
+  { "name": "SUZUKI", "slug": "suzuki", "link": "https://www.suzuki.co.id/" },
+  { "name": "HOUSE OF SMITH", "slug": "house-of-smith", "link": "#" }
+]

@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "predev": "node scripts/predev.cjs",
-    "dev": "vite src --port 3000",
+    "dev": "npm run predev && vite src --port 3000",
     "prebuild": "node scripts/predev.cjs",
     "build": "vite build src",
     "preview": "vite preview"

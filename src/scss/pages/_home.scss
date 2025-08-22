@@ -88,6 +88,122 @@
     }
   }
 
+  &__awards {
+    // give space below the section title so the strip doesn't feel cramped
+    .awards__title {
+      margin-bottom: 3.2rem;
+    }
+    // Brands carousel
+    .brands {
+      position: relative;
+      overflow: hidden;
+      border-top: 2px solid $col-boulder;
+      border-bottom: 2px solid $col-boulder;
+      padding: 1.6rem 0;
+      margin-top: 10rem; // push the strip further downward
+      // give the vertical strip a visible area
+      min-height: 420px;
+      height: 75vh; // fill most of the column
+      --brands-duration: 45s;
+
+      @include media(">tablet") {
+        height: 88vh; // desktop: nearly full height
+      }
+
+      // two identical tracks for seamless loop
+      display: block; // tracks will stack absolutely
+      gap: 0;
+
+      .brands__track {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column; // stack items vertically
+        align-items: flex-start;
+        gap: 4.8rem; // more spacing between vertical items
+        animation: brands-marquee-y var(--brands-duration) linear infinite;
+        will-change: transform;
+        height: auto;
+        padding: 0 1.6rem;
+        transform: translateY(0); // base position for first track
+      }
+
+      // Place the second track immediately after the first using transform,
+      // so both scroll continuously without overlapping
+      .brands__track[aria-hidden="true"] {
+        transform: translateY(100%);
+      }
+
+      &:hover {
+        .brands__track {
+          animation-play-state: paused;
+        }
+      }
+
+      .brands__item {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding: 1.2rem 0; // vertical list breathing space
+        width: 100%;
+        color: $col-gray;
+        text-decoration: none;
+        // remove dividing borders to reduce visual clutter
+        border-right: none;
+        white-space: nowrap; // keep name in one line
+        min-height: 84px; // keep each row consistent with logo box height
+
+        @media (any-pointer: fine) {
+          transition: color 0.2s ease, opacity 0.2s ease;
+          &:hover {
+            color: $col-orange;
+          }
+        }
+      }
+
+      .brands__logo {
+        width: 84px;
+        height: 84px;
+        display: grid;
+        place-items: center;
+        border-radius: 6px;
+        background: rgba($col-boulder, 0.12);
+
+        img {
+          width: 72px;
+          height: 72px;
+          object-fit: contain;
+          // make logos fully visible
+          filter: none;
+          opacity: 1;
+        }
+
+        .brands__fallback {
+          display: none;
+        }
+      }
+
+      .brands__name {
+        @extend %description-16;
+        // larger for strong presence
+        font-size: clamp(20px, 3vw, 32px);
+        line-height: 1.15;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+        font-weight: 500;
+      }
+    }
+
+    // Vertical marquee for brands section
+    @keyframes brands-marquee-y {
+      from { transform: translateY(0); }
+      to { transform: translateY(-100%); }
+    }
+  }
+
   &__hero {
     margin-bottom: 9.6rem;
     @extend %padding-home;
